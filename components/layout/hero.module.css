@@ -1,0 +1,29 @@
+.hero {
+  height: calc(100vh - 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  width: 70%;
+  font-size: 3.5rem;
+  line-height: 1.5;
+  padding: 3rem 0;
+}
+
+.action {
+  background-color: #800000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.15rem;
+  height: 3rem;
+}
+
+.action p {
+  margin-right: 0.5rem;
+}
