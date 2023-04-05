@@ -13,7 +13,12 @@ html {
 body {
   margin: 0;
   font-family: "Open Sans", "Lato", sans-serif;
-  background-color: #11283c;
+  background-color: #000;
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
 }
 
 h1,
@@ -24,4 +29,28 @@ h5,
 h6 {
   font-family: "Lato", sans-serif;
   color: #fff;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  padding: 0.75rem 4rem;
+  color: #fff;
+  background-color: #800000;
+  border: none;
+  border-radius: 3rem;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.nav-link:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
 }
