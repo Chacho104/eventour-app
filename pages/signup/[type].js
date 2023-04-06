@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/footer/footer";
 import MainNav from "@/components/layout/main-nav";
 import { Fragment } from "react";
 
@@ -10,6 +11,7 @@ function SignUpTypePage() {
           <h1>This is the Sign Up Type Page</h1>
         </div>
       </main>
+      <Footer />
     </Fragment>
   );
 }
