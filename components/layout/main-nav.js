@@ -10,12 +10,15 @@ function MainNav() {
         </div>
         <ul className={classes["nav-items"]}>
           <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
             <Link href="/events">All Events</Link>
           </li>
-          <li className={classes.login}>
+          <li>
             <Link href="/login">Log In</Link>
           </li>
-          <li className={classes.signup}>
+          <li>
             <Link href="/signup">Sign Up</Link>
           </li>
         </ul>
