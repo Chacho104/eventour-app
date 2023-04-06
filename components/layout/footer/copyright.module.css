@@ -1,0 +1,11 @@
+.copyright {
+  background-color: #800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright span {
+  color: #fff;
+  padding: 1rem;
+}
