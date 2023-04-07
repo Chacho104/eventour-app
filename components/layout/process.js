@@ -18,8 +18,22 @@ function Process() {
     <section className={classes.process}>
       <h1>Eventour guarantees the success of events</h1>
       <div className={classes.btns}>
-        <button onClick={eventGoersProcess}>For event goers</button>
-        <button onClick={eventCreatorsProcess}>For event creators</button>
+        <div>
+          <button
+            className={goersProcess ? classes.active : ""}
+            onClick={eventGoersProcess}
+          >
+            Event goers
+          </button>
+        </div>
+        <div>
+          <button
+            className={creatorsProcess ? classes.active : ""}
+            onClick={eventCreatorsProcess}
+          >
+            Event creators
+          </button>
+        </div>
       </div>
       <hr />
       {goersProcess && (
