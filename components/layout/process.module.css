@@ -24,7 +24,8 @@
   cursor: pointer;
 }
 
-.btns button:active {
+.btns button:hover,
+.btns button.active {
   color: #800;
   text-decoration: underline;
   text-underline-offset: 1.8rem;
