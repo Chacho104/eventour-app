@@ -1,0 +1,52 @@
+.filter-events {
+  background-color: #fff;
+}
+
+.filter-events p {
+  font-size: 2rem;
+  padding: 2rem 1rem;
+  line-height: 1.4;
+}
+
+.form {
+  padding: 0 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.control {
+  padding: 0 0.5rem;
+  border: none;
+  outline: none;
+}
+
+.label {
+  padding-bottom: 0.75rem;
+}
+
+.control label {
+  color: #800;
+  font-size: 1.25rem;
+  padding: 2rem 0;
+}
+
+.control select {
+  border: 1px solid #800;
+  width: 15rem;
+  padding: 0.3rem 0.1rem;
+  font-size: 1.05rem;
+}
+
+.control select:focus {
+  border: 1px solid #888;
+  outline: none;
+}
