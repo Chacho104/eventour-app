@@ -1,6 +1,9 @@
+import EventContent from "@/components/event-detail/event-content";
+import EventLogistics from "@/components/event-detail/event-logistics";
+import EventSummary from "@/components/event-detail/event-summary";
+import Button from "@/components/ui/button";
 import { getEventById } from "@/dummy-data";
 import { useRouter } from "next/router";
-import { Fragment } from "react";
 
 function EventDetailPage() {
   const router = useRouter();
@@ -11,9 +14,22 @@ function EventDetailPage() {
     return <p>No event found!</p>;
   }
   return (
-    <Fragment>
-      <h1>This is the Event Detail Page</h1>
-    </Fragment>
+    <section className="event-details">
+      <EventSummary
+        image={event.image}
+        category={event.category}
+        title={event.title}
+      />
+      <EventLogistics
+        date={event.date}
+        location={event.location}
+        time={event.time}
+        contact={event.contact}
+        price={event.price}
+      />
+      <EventContent description={event.description} />
+      <Button>Get your ticket</Button>
+    </section>
   );
 }
 
