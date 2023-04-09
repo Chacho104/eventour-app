@@ -30,7 +30,7 @@ function EventItem(props) {
           <p>{eventDay}</p>
           <p>{eventMonth}</p>
         </div>
-        <div className={classes.details}>
+        <div className="details">
           <h3>{category}</h3>
           <h2>{title}</h2>
           <span>320 Participants</span>
