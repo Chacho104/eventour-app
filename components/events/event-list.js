@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import EventItem from "./event-item";
 import classes from "./event-list.module.css";
-import Link from "next/link";
 function EventList(props) {
   const { events } = props;
   return (
@@ -18,11 +17,6 @@ function EventList(props) {
           />
         ))}
       </ul>
-      <div className={classes.action}>
-        <Link href="/events" className="nav-link">
-          Browse more events
-        </Link>
-      </div>
     </Fragment>
   );
 }
