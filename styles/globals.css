@@ -54,14 +54,22 @@ a {
 .center {
   text-align: center;
   margin: 0 auto;
+  color: #000;
+  font-size: 1.25rem;
+}
+
+.center span {
+  padding-top: 2rem;
   color: #fff;
+  font-size: 1.25rem;
 }
 
 /*Event details styles*/
 
 .event-details {
   background-color: #fff;
-  width: 50%;
+  width: 95%;
+  max-width: 35rem;
   margin: 3rem auto;
   padding-bottom: 3rem;
 }
