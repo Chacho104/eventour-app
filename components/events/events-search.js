@@ -21,7 +21,7 @@ function EventsSearch(props) {
       <div>
         <p>
           Find interesting events faster by filtering our diverse list of
-          upcoming events based on your preferences.
+          upcoming events
         </p>
       </div>
       <form className={classes.form} onSubmit={submitHandler}>
