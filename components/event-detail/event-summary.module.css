@@ -1,5 +1,6 @@
-.image img {
+.image {
   width: 100%;
-  height: auto;
-  max-height: 25rem;
+  height: 22rem;
+  object-fit: contain;
+  position: relative;
 }
