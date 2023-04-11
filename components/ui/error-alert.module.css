@@ -1,0 +1,18 @@
+.error-alert {
+  height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message {
+  width: 50%;
+  height: auto;
+  min-height: 20rem;
+  background-color: #f8f6f6;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
