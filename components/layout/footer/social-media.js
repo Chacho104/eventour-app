@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { GrFacebook, GrInstagram, GrLinkedin, GrTwitter } from "react-icons/gr";
+import {
+  GrFacebook,
+  GrInstagram,
+  GrLinkedin,
+  GrTwitter,
+  GrYoutube,
+} from "react-icons/gr";
 import classes from "./social-media.module.css";
 
 function SocialMediaLinks() {
@@ -24,6 +30,11 @@ function SocialMediaLinks() {
         <li>
           <Link href="/">
             <GrLinkedin />
+          </Link>
+        </li>
+        <li>
+          <Link href="/">
+            <GrYoutube />
           </Link>
         </li>
       </ul>
