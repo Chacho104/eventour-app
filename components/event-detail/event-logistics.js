@@ -3,9 +3,10 @@ import { VscLocation } from "react-icons/vsc";
 import { MdOutlinePhone } from "react-icons/md";
 import { FaMoneyBillWave } from "react-icons/fa";
 import classes from "./event-logistics.module.css";
+import Image from "next/image";
 
 function EventLogistics(props) {
-  const { date, location, time, contact, price } = props;
+  const { title, date, location, time, contact, price, image } = props;
   const readableDate = new Date(date).toLocaleString("en-US", {
     day: "numeric",
     month: "long",
@@ -21,37 +22,42 @@ function EventLogistics(props) {
 
   return (
     <section className={classes.logistics}>
-      <div className={classes["logs-item"]}>
-        <div className={classes.icon}>
-          <TbCalendarTime />
-        </div>
-        <div>
-          <p>{readableDate}</p>
-          <p>{time}</p>
-        </div>
+      <div className={classes.image}>
+        <Image src={"/" + image} alt={title} width={240} height={240} />
       </div>
-      <div className={classes["logs-item"]}>
-        <div className={classes.icon}>
-          <VscLocation />
+      <div>
+        <div className={classes["logs-item"]}>
+          <div className={classes.icon}>
+            <TbCalendarTime />
+          </div>
+          <div>
+            <p>{readableDate}</p>
+            <p>{time}</p>
+          </div>
         </div>
-        <div>
-          <p>{location}</p>
+        <div className={classes["logs-item"]}>
+          <div className={classes.icon}>
+            <VscLocation />
+          </div>
+          <div>
+            <p>{location}</p>
+          </div>
         </div>
-      </div>
-      <div className={classes["logs-item"]}>
-        <div className={classes.icon}>
-          <MdOutlinePhone />
+        <div className={classes["logs-item"]}>
+          <div className={classes.icon}>
+            <MdOutlinePhone />
+          </div>
+          <div>
+            <p>{contact}</p>
+          </div>
         </div>
-        <div>
-          <p>{contact}</p>
-        </div>
-      </div>
-      <div className={classes["logs-item"]}>
-        <div className={classes.icon}>
-          <FaMoneyBillWave />
-        </div>
-        <div>
-          <p>{cost}</p>
+        <div className={classes["logs-item"]}>
+          <div className={classes.icon}>
+            <FaMoneyBillWave />
+          </div>
+          <div>
+            <p>{cost}</p>
+          </div>
         </div>
       </div>
     </section>
