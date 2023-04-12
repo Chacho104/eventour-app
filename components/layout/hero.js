@@ -1,6 +1,6 @@
-import Button from "../ui/button";
+import NewsletterRegistration from "../input/newsletter-registration";
 import classes from "./hero.module.css";
-import Link from "next/link";
+
 function Hero() {
   return (
     <section>
@@ -8,7 +8,7 @@ function Hero() {
         <h1>
           Where event goers and event creators meet faster, for greater fun
         </h1>
-        <Button link="/events">Browse all events</Button>
+        <NewsletterRegistration />
       </div>
     </section>
   );
