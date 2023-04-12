@@ -1,0 +1,27 @@
+.comments {
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.comments p {
+  color: #fff;
+  padding-top: 2rem;
+}
+
+.toggle-btn {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.toggle-btn:hover,
+.toggle-btn:active {
+  border: 1px solid #888;
+  color: #888;
+}
