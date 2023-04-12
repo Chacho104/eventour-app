@@ -5,6 +5,8 @@ import Button from "@/components/ui/button";
 import ErrorAlert from "@/components/ui/error-alert";
 import { getEventById, getFeaturedEvents } from "@/components/helpers/api-util";
 import Head from "next/head";
+import Comments from "@/components/input/comments";
+import { Fragment } from "react";
 
 function EventDetailPage(props) {
   const event = props.selectedEvent;
@@ -18,26 +20,25 @@ function EventDetailPage(props) {
     );
   }
   return (
-    <section className="event-details">
+    <Fragment>
       <Head>
         <title>{event.title}</title>
         <meta name="description" content={event.description} />
       </Head>
-      <EventSummary
-        image={event.image}
-        category={event.category}
-        title={event.title}
-      />
+      <EventSummary category={event.category} title={event.title} />
       <EventLogistics
+        title={event.title}
         date={event.date}
         location={event.location}
         time={event.time}
         contact={event.contact}
         price={event.price}
+        image={event.image}
       />
       <EventContent description={event.description} />
+      <Comments eventId={event.id} />
       <Button>Get your ticket</Button>
-    </section>
+    </Fragment>
   );
 }
 
