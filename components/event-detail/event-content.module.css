@@ -1,3 +1,13 @@
 .event-content {
-  padding: 0.5rem 1rem 1.5rem;
+  width: 100%;
+  max-width: 40rem;
+  margin: 3rem auto 2rem;
+  padding: 0 1rem;
+}
+
+.event-content p {
+  color: #fff;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.5;
 }
