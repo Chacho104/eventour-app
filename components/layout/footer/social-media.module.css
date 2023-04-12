@@ -9,6 +9,12 @@
   justify-content: flex-end;
 }
 
+@media screen and (max-width: 600px) {
+  .items {
+    justify-content: center;
+  }
+}
+
 .items li {
   padding: 1rem;
 }
