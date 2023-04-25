@@ -52,16 +52,18 @@ function NewsletterRegistration() {
 
   return (
     <section className={classes.newsletter}>
-      <h3>Sign up to stay updated!</h3>
+      <p>Register for newsletter to stay updated!</p>
       <form onSubmit={registrationHandler}>
         <div className={classes.control}>
-          <input
-            ref={emailInputRef}
-            type="email"
-            id="email"
-            placeholder="Email address"
-            aria-label="Your email"
-          />
+          <div>
+            <input
+              ref={emailInputRef}
+              type="email"
+              id="email"
+              placeholder="Email address"
+              aria-label="Your email"
+            />
+          </div>
           <Button>Register</Button>
         </div>
       </form>
