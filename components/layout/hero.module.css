@@ -1,5 +1,5 @@
 .hero {
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 6rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,4 +25,11 @@
 
 .action p {
   margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    width: 100%;
+    font-size: 2.5rem;
+  }
 }
