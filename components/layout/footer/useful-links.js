@@ -3,7 +3,7 @@ import classes from "./useful-links.module.css";
 function UsefulLinks() {
   return (
     <section className={classes.links}>
-      <div className={classes['link-group']}>
+      <div className={classes["link-group"]}>
         <h2>Navigation</h2>
         <ul>
           <li>
@@ -23,7 +23,7 @@ function UsefulLinks() {
           </li>
         </ul>
       </div>
-      <div className={classes['link-group']}>
+      <div className={classes["link-group"]}>
         <h2>Legal</h2>
         <ul>
           <li>
@@ -43,8 +43,8 @@ function UsefulLinks() {
           </li>
         </ul>
       </div>
-      <div className={classes['link-group']}>
-        <h2>Help and Contact</h2>
+      <div className={classes["link-group"]}>
+        <h2>Help</h2>
         <ul>
           <li>
             <Link href="/">Customer care</Link>
@@ -57,7 +57,7 @@ function UsefulLinks() {
           </li>
         </ul>
       </div>
-      <div className={classes['link-group']}>
+      <div className={classes["link-group"]}>
         <h2>Partners</h2>
         <ul>
           <li>
