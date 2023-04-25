@@ -12,7 +12,7 @@
   width: 100%;
   background-color: #f8f6f6;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
+  padding: 1.5rem 1rem;
 }
 
 .row {
@@ -22,7 +22,6 @@
 }
 
 .control {
-  margin-bottom: 0.5rem;
   flex: 1;
   min-width: 10rem;
 }
@@ -49,4 +48,8 @@
 .control textarea:focus {
   border: 1px solid #000;
   outline: none;
+}
+
+#text-area {
+  margin: 1rem 0;
 }
