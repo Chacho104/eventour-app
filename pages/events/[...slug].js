@@ -6,10 +6,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Head from "next/head";
 
-const fetcher = (url) =>
-  fetch("https://eventour-app-default-rtdb.firebaseio.com/events.json").then(
-    (res) => res.json()
-  );
+const fetcher = (url) => fetch("/api/events").then((res) => res.json());
 
 function FilteredEventsPage() {
   const [loadedEvents, setLoadedEvents] = useState();
@@ -21,14 +18,7 @@ function FilteredEventsPage() {
 
   useEffect(() => {
     if (data) {
-      const events = [];
-
-      for (const key in data) {
-        events.push({
-          id: key,
-          ...data[key],
-        });
-      }
+      const events = data.events;
       setLoadedEvents(events);
     }
   }, [data]);
