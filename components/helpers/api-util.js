@@ -1,17 +1,8 @@
 export async function getAllEvents() {
-  const response = await fetch(
-    "https://eventour-app-default-rtdb.firebaseio.com/events.json"
-  );
+  const response = await fetch("http://localhost:3000/api/events");
   const data = await response.json();
 
-  const events = [];
-
-  for (const key in data) {
-    events.push({
-      id: key,
-      ...data[key],
-    });
-  }
+  const events = data.events;
   return events;
 }
 
@@ -20,9 +11,9 @@ export async function getFeaturedEvents() {
   return allEvents.filter((event) => event.isFeatured);
 }
 
-export async function getEventById(id) {
+export async function getEventData(slug) {
   const allEvents = await getAllEvents();
-  return allEvents.find((event) => event.id === id);
+  return allEvents.find((event) => event.slug === slug);
 }
 
 export async function getFilteredEvents(eventFilter) {
