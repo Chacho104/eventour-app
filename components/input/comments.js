@@ -24,7 +24,7 @@ function Comments(props) {
           setIsFetchingComments(false);
         });
     }
-  }, [showComments]);
+  }, [showComments, eventId]);
 
   function toggleCommentsHandler() {
     setShowComments((prevStatus) => !prevStatus);
@@ -69,15 +69,20 @@ function Comments(props) {
       );
   }
 
+  const noComments = comments.length === 0;
+
   return (
     <section className={classes.comments}>
       <button className={classes["toggle-btn"]} onClick={toggleCommentsHandler}>
         {showComments ? "Hide" : "Show"} Comments
       </button>
+      {showComments && isFetchingComments && <p>Loading comments...</p>}
+      {showComments && !isFetchingComments && noComments && (
+        <p>No comments yet for this event. Be the first to comment!</p>
+      )}
       {showComments && !isFetchingComments && (
         <CommentList commentItems={comments} />
       )}
-      {showComments && isFetchingComments && <p>Loading comments...</p>}
       {showComments && <NewComment onAddComment={addCommentHandler} />}
     </section>
   );
