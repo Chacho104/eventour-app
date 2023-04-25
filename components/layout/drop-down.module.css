@@ -1,0 +1,26 @@
+.drop-down {
+  width: 100%;
+  height: 60vh;
+  background-color: #800;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  border-top: 1px solid #f8f6f6;
+}
+
+.drop-down ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.drop-down ul li {
+  padding: 0 1rem;
+}
+
+.drop-down ul li a {
+  color: #fff;
+  font-size: 1.8rem;
+}
