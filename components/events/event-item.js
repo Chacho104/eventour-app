@@ -3,7 +3,7 @@ import classes from "./event-item.module.css";
 import Image from "next/image";
 
 function EventItem(props) {
-  const { image, title, date, category, id } = props;
+  const { image, title, date, category, slug } = props;
   const formattedDate = new Date(date);
   const eventDay = formattedDate.getDate();
   const month = [
@@ -22,7 +22,7 @@ function EventItem(props) {
   ];
   const eventMonth = month[formattedDate.getMonth()];
 
-  const exploreLink = `/events/${id}`;
+  const exploreLink = `/events/${slug}`;
   return (
     <li className={classes.event}>
       <Link href={exploreLink}>
