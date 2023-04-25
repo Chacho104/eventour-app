@@ -5,17 +5,17 @@
   align-items: center;
 }
 
-.newsletter h3 {
+.newsletter p {
   text-align: center;
-  font-size: 1.5rem;
-  padding-bottom: 1.25rem;
+  font-size: 1.25rem;
+  padding: 0 1rem 1.5rem;
   color: #fff;
 }
 
 .control input {
   font-size: 1.225rem;
   color: #000;
-  padding: 0.25rem 0.5rem;
+  padding: 0.75rem 0.5rem;
   border: none;
 }
 
@@ -31,4 +31,15 @@
 
 .control input {
   flex: 1;
+}
+
+@media screen and (max-width: 450px) {
+  .control {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .control input {
+    margin-bottom: 1.5rem;
+  }
 }
