@@ -1,9 +1,9 @@
 import EventList from "@/components/events/event-list";
 import EventsSearch from "@/components/events/events-search";
-import { getAllEvents } from "@/components/helpers/api-util";
 import { useRouter } from "next/router";
 import { Fragment } from "react";
 import Head from "next/head";
+import { connectDatabase, getAllDocuments } from "@/components/helpers/db-util";
 
 function AllEventsPage(props) {
   const { events } = props;
@@ -32,7 +32,23 @@ function AllEventsPage(props) {
 }
 
 export async function getStaticProps() {
-  const events = await getAllEvents();
+  const client = await connectDatabase();
+
+  if (!client) {
+    throw new Error({ message: "Connecting to the database failed!" });
+  }
+
+  const res = await getAllDocuments(client, "events", "all-events", {
+    date: 1,
+  });
+
+  if (!res) {
+    throw new Error({ message: "Getting events from the database failed!" });
+  }
+
+  const events = JSON.parse(JSON.stringify(res));
+
+  client.close();
 
   return {
     props: {
