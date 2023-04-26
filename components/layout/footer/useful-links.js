@@ -33,24 +33,24 @@ function UsefulLinks() {
             <Link href="/">Privacy</Link>
           </li>
           <li>
-            <Link href="/">Copyright</Link>
-          </li>
-          <li>
             <Link href="/">Accessibilty</Link>
           </li>
           <li>
-            <Link href="/">Non-Discrimination</Link>
+            <Link href="/">Copyright</Link>
           </li>
         </ul>
       </div>
       <div className={classes["link-group"]}>
-        <h2>Help</h2>
+        <h2>Customer care</h2>
         <ul>
           <li>
-            <Link href="/">Customer care</Link>
+            <Link href="/">Enquiries</Link>
           </li>
           <li>
-            <Link href="/">Refunds policy</Link>
+            <Link href="/">Reviews</Link>
+          </li>
+          <li>
+            <Link href="/">Refunds</Link>
           </li>
           <li>
             <Link href="/">Complaints</Link>
@@ -61,13 +61,16 @@ function UsefulLinks() {
         <h2>Partners</h2>
         <ul>
           <li>
-            <Link href="/">Chachosolutionzz</Link>
+            <Link href="/">C-solutions</Link>
           </li>
           <li>
             <Link href="/">Ticketmaster</Link>
           </li>
           <li>
             <Link href="/">Eventify</Link>
+          </li>
+          <li>
+            <Link href="/">Liveit</Link>
           </li>
         </ul>
       </div>
