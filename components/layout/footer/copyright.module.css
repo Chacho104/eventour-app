@@ -1,5 +1,5 @@
 .copyright {
-  background-color: #800;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,5 +7,5 @@
 
 .copyright span {
   color: #fff;
-  padding: 1rem;
+  padding: 1.25rem 0.1rem;
 }
