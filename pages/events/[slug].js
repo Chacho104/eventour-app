@@ -3,12 +3,10 @@ import EventLogistics from "@/components/event-detail/event-logistics";
 import EventSummary from "@/components/event-detail/event-summary";
 import Button from "@/components/ui/button";
 import ErrorAlert from "@/components/ui/error-alert";
-import { getEventData, getFeaturedEvents } from "@/components/helpers/api-util";
 import Head from "next/head";
 import Comments from "@/components/input/comments";
 import { Fragment } from "react";
-
-export const dynamic = "force-dynamic";
+import { connectDatabase, getAllDocuments } from "@/components/helpers/db-util";
 
 function EventDetailPage(props) {
   const event = props.selectedEvent;
@@ -27,18 +25,37 @@ function EventDetailPage(props) {
         <title>{event.title}</title>
         <meta name="description" content={event.description} />
       </Head>
-      <EventSummary category={event.category} title={event.title} />
-      <EventLogistics
-        title={event.title}
-        date={event.date}
-        location={event.location}
-        time={event.time}
-        contact={event.contact}
-        price={event.price}
-        image={event.image}
-      />
-      <EventContent description={event.description} />
-      <Comments eventId={event._id} />
+      {event.map((event) => (
+        <EventSummary
+          key={event._id}
+          eventId={event._id}
+          category={event.category}
+          title={event.title}
+        />
+      ))}
+      {event.map((event) => (
+        <EventLogistics
+          key={event._id}
+          eventId={event._id}
+          title={event.title}
+          date={event.date}
+          location={event.location}
+          time={event.time}
+          contact={event.contact}
+          price={event.price}
+          image={event.image}
+        />
+      ))}
+      {event.map((event) => (
+        <EventContent
+          key={event._id}
+          eventId={event._id}
+          description={event.description}
+        />
+      ))}
+      {event.map((event) => (
+        <Comments key={event._id} eventId={event._id} />
+      ))}
       <Button>Get your ticket</Button>
     </Fragment>
   );
@@ -47,7 +64,30 @@ function EventDetailPage(props) {
 export async function getStaticProps(context) {
   const { params } = context;
   const { slug } = params;
-  const event = await getEventData(slug);
+
+  const client = await connectDatabase();
+
+  if (!client) {
+    throw new Error({ message: "Connecting to the database failed!" });
+  }
+
+  const res = await getAllDocuments(
+    client,
+    "events",
+    "all-events",
+    {},
+    {
+      slug: slug,
+    }
+  );
+
+  if (!res) {
+    throw new Error({ message: "Getting events from the database failed!" });
+  }
+
+  const event = JSON.parse(JSON.stringify(res));
+
+  client.close();
 
   return {
     props: {
@@ -58,8 +98,28 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  // Instead of pre-rendering all events, we could just pre-render the featured events.
-  const events = await getFeaturedEvents();
+  const client = await connectDatabase();
+
+  if (!client) {
+    throw new Error({ message: "Connecting to the database failed!" });
+  }
+
+  const res = await getAllDocuments(
+    client,
+    "events",
+    "all-events",
+    {},
+    { isFeatured: true }
+  );
+
+  if (!res) {
+    throw new Error({ message: "Getting events from the database failed!" });
+  }
+
+  const events = JSON.parse(JSON.stringify(res));
+
+  client.close();
+
   const paths = events.map((event) => ({ params: { slug: event.slug } }));
 
   return {
