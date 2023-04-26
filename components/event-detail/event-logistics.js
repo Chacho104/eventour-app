@@ -14,7 +14,7 @@ function EventLogistics(props) {
   });
 
   let cost;
-  if (+price === 0) {
+  if (price === 0) {
     cost = "Free";
   } else {
     cost = `$${price}`;
