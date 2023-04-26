@@ -1,10 +1,10 @@
 import Hero from "@/components/layout/hero";
-import { getFeaturedEvents } from "@/components/helpers/api-util";
 import { Fragment } from "react";
 import EventList from "@/components/events/event-list";
 import Process from "@/components/layout/process";
 import Button from "@/components/ui/button";
 import Head from "next/head";
+import { connectDatabase, getAllDocuments } from "@/components/helpers/db-util";
 
 function HomePage(props) {
   return (
@@ -28,7 +28,29 @@ function HomePage(props) {
 }
 
 export async function getStaticProps() {
-  const featuredEvents = await getFeaturedEvents();
+  const client = await connectDatabase();
+
+  if (!client) {
+    throw new Error({ message: "Connecting to the database failed!" });
+  }
+
+  const res = await getAllDocuments(
+    client,
+    "events",
+    "all-events",
+    {
+      date: 1,
+    },
+    { isFeatured: true }
+  );
+
+  if (!res) {
+    throw new Error({ message: "Getting events from the database failed!" });
+  }
+
+  const featuredEvents = JSON.parse(JSON.stringify(res));
+
+  client.close();
   return {
     props: {
       events: featuredEvents,
