@@ -25,7 +25,7 @@ function MainNav() {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/events">All Events</Link>
+              <Link href="/events">Events</Link>
             </li>
             <li>
               <Link href="/login">Log In</Link>
