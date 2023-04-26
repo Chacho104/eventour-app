@@ -1,34 +1,38 @@
 .hero {
+  width: 100%;
+  height: auto;
+}
+
+.image {
+  width: 100%;
   height: calc(100vh - 6rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  position: relative;
 }
 
-.hero h1 {
+.image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.content {
+  background-image: linear-gradient(180deg, #000000 0%, #8000003c 100%);
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content h1 {
   width: 70%;
+  margin: 0 auto;
   font-size: 3.5rem;
-  line-height: 1.5;
-}
-
-.action {
-  background-color: #800000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #fff;
-  font-size: 1.15rem;
-  height: 3rem;
-}
-
-.action p {
-  margin-right: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
-  .hero h1 {
+  .content h1 {
     width: 100%;
     font-size: 2.5rem;
   }
