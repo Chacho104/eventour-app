@@ -13,7 +13,7 @@ function UsefulLinks() {
             <Link href="/">About</Link>
           </li>
           <li>
-            <Link href="/events">All Events</Link>
+            <Link href="/events">Events</Link>
           </li>
           <li>
             <Link href="/login">Log In</Link>
@@ -70,7 +70,24 @@ function UsefulLinks() {
             <Link href="/">Eventify</Link>
           </li>
           <li>
-            <Link href="/">Liveit</Link>
+            <Link href="/">Live-it</Link>
+          </li>
+        </ul>
+      </div>
+      <div className={classes["link-group"]}>
+        <h2>Resources</h2>
+        <ul>
+          <li>
+            <Link href="/">Gallery</Link>
+          </li>
+          <li>
+            <Link href="/">Blogs</Link>
+          </li>
+          <li>
+            <Link href="/">Creators</Link>
+          </li>
+          <li>
+            <Link href="/">Careers</Link>
           </li>
         </ul>
       </div>
