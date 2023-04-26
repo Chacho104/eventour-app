@@ -17,7 +17,7 @@ function DropDown(props) {
         </li>
         <li>
           <Link href="/events" onClick={props.onClick}>
-            All Events
+            Events
           </Link>
         </li>
         <li>
