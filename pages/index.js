@@ -1,7 +1,6 @@
 import Hero from "@/components/layout/hero";
 import { Fragment } from "react";
 import EventList from "@/components/events/event-list";
-import Process from "@/components/layout/process";
 import Button from "@/components/ui/button";
 import Head from "next/head";
 import { connectDatabase, getAllDocuments } from "@/components/helpers/db-util";
@@ -17,7 +16,6 @@ function HomePage(props) {
         />
       </Head>
       <Hero />
-      <Process />
       <section>
         <h1>Top Upcoming Events</h1>
         <EventList events={props.events} />
