@@ -49,6 +49,7 @@
   width: 20rem;
   padding: 0.65rem 0.1rem;
   font-size: 1.05rem;
+  background-color: transparent;
 }
 
 .control select:focus {
