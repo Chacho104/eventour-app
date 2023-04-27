@@ -7,3 +7,9 @@
   padding: 0;
   margin-bottom: 4rem;
 }
+
+@media screen and (max-width: 600px) {
+  .events {
+    margin-bottom: 3rem;
+  }
+}
