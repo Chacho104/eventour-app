@@ -2,7 +2,7 @@
   background-image: url("../../public/images/event-banner2.jpeg");
   width: 100%;
   height: auto;
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 6rem);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
   width: 100%;
   height: auto;
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 6rem);
 }
 
 .content {
