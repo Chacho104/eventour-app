@@ -1,8 +1,13 @@
 import Link from "next/link";
 import classes from "./event-item.module.css";
 import Image from "next/image";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 function EventItem(props) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
+
   const { image, title, date, category, slug } = props;
   const formattedDate = new Date(date);
   const eventDay = formattedDate.getDate();
@@ -24,7 +29,10 @@ function EventItem(props) {
 
   const exploreLink = `/events/${slug}`;
   return (
-    <li className={classes.event}>
+    <li
+      ref={ref}
+      className={`${classes.event} ${isInView ? classes.reveal : ""}`}
+    >
       <Link href={exploreLink}>
         <Image src={"/" + image} alt={title} width={304} height={256} />
         <div className={classes.date}>
