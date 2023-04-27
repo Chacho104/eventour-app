@@ -48,6 +48,13 @@
   font-size: 1.5rem;
 }
 
+.nav-items li a:hover,
+.nav-items li a:active,
+.nav-items li a.active {
+  text-decoration: underline;
+  text-underline-offset: 0.6rem;
+}
+
 @media screen and (max-width: 768px) {
   .header {
     display: none;
