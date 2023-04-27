@@ -16,12 +16,13 @@
 }
 
 .content {
-  background-image: linear-gradient(180deg, #000000 0%, #8000003c 100%);
+  background-image: linear-gradient(180deg, #000000 0%, #0000003c 100%);
   position: absolute;
   width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-bottom: 2rem;
 }
 
 .content h1 {
@@ -29,9 +30,21 @@
   margin: 0 auto;
   font-size: 3.5rem;
   color: #fff;
+  padding: 2rem 0;
 }
 
 @media screen and (max-width: 768px) {
+  .content h1 {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content {
+    top: 60%;
+  }
+
   .content h1 {
     width: 100%;
     font-size: 2.5rem;
