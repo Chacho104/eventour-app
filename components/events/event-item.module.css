@@ -32,6 +32,14 @@
 @media screen and (max-width: 420px) {
   .event {
     width: 90%;
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  .event.reveal {
+    transform: none;
+    opacity: 1;
+    transition: all 0.9s linear 0.1s;
   }
 
   .event img {
