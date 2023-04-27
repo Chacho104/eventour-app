@@ -39,7 +39,7 @@
   .event.reveal {
     transform: none;
     opacity: 1;
-    transition: all 0.9s ease-in 0.1s;
+    transition: all 0.9s ease-in 0s;
   }
 
   .event img {
