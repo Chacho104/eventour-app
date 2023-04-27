@@ -1,7 +1,7 @@
 .social-links {
   background-color: #f8f6f6;
   padding: 0 1rem;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .items {
@@ -10,6 +10,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .social-links {
+    margin-top: 3rem;
+  }
+
   .items {
     justify-content: center;
   }
