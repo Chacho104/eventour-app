@@ -3,8 +3,10 @@ import classes from "./main-nav.module.css";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { Fragment, useState } from "react";
 import DropDown from "./drop-down";
+import { useRouter } from "next/router";
 
 function MainNav() {
+  const router = useRouter();
   const [toggleMenu, setToggleMenu] = useState(false);
   function closeDropMenu() {
     setToggleMenu(false);
@@ -22,16 +24,36 @@ function MainNav() {
           </div>
           <ul className={classes["nav-items"]}>
             <li>
-              <Link href="/">Home</Link>
+              <Link
+                href="/"
+                className={router.pathname === "/" ? classes.active : ""}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link href="/events">Events</Link>
+              <Link
+                href="/events"
+                className={router.pathname === "/events" ? classes.active : ""}
+              >
+                Events
+              </Link>
             </li>
             <li>
-              <Link href="/login">Log In</Link>
+              <Link
+                href="/login"
+                className={router.pathname === "/login" ? classes.active : ""}
+              >
+                Log In
+              </Link>
             </li>
             <li>
-              <Link href="/signup">Sign Up</Link>
+              <Link
+                href="/signup"
+                className={router.pathname === "/signup" ? classes.active : ""}
+              >
+                Sign Up
+              </Link>
             </li>
           </ul>
         </nav>
@@ -43,11 +65,11 @@ function MainNav() {
           </span>
           <span className={classes.menu}>
             {toggleMenu ? (
-              <span className={classes['toggle-links']}>
+              <span className={classes["toggle-links"]}>
                 <RiCloseLine onClick={closeDropMenu} />
               </span>
             ) : (
-              <span className={classes['toggle-links']}>
+              <span className={classes["toggle-links"]}>
                 <RiMenu3Line onClick={showDropMenu} />
               </span>
             )}
