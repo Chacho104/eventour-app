@@ -1,5 +1,6 @@
 import Image from "next/image";
 import classes from "./hero.module.css";
+import Button from "../ui/button";
 
 function Hero() {
   return (
@@ -14,6 +15,7 @@ function Hero() {
         </div>
         <div className={classes.content}>
           <h1>Where event goers and event creators meet, faster</h1>
+          <Button link="/events">Browse all events</Button>
         </div>
       </div>
     </section>
